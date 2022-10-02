@@ -4,5 +4,5 @@
 int main(){
 	int x = 2;
 	power_ref(&x, 3);
-	printf("%d", x);
+	printf("%d=\n", x);
 }
