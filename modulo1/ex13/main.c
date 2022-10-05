@@ -4,11 +4,12 @@
 int main() {
 char str[] = "aaaaabcacc";
 char c = 'c';
-int vec[20];
+int n = 20;
+int vec[n];
 
-int number = where_is(str,c,vec);
+where_is(str,c,vec);
 
-for (int i = 0; i<11; i++) {
+for (int i = 0; i<n; i++) {
 	printf("vec = %d ", vec[i]);
 }
 
