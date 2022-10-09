@@ -1,9 +1,9 @@
 # A Makefile with variables and suffix rules
 # Source: moodle ARCCP
 # variaveis
-INCLUDES = find_word.h upper1.h
-SOURCES = find_word.c upper1.c main.c
-OBJFILES = find_word.o upper1.o main.o
+INCLUDES = find_word.h
+SOURCES = find_word.c main.c
+OBJFILES = find_word.o main.o
 EXEC = main
 # Suffix rules
 .SUFFIXES : .c .o
