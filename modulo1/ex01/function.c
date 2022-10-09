@@ -21,9 +21,10 @@ void function() {
 	printf("address vec[2] = %p\n", &vec[2]);
 	printf("address vec[3] = %p\n", &vec[3]);
 	
-	/*b) The address of vec is equal to the vec[0] because the pointer vec corresponds to the first position of the array. 
-	 * vec is an array of integers so the positions of the array are consecutive by 4 bytes.  */
+	/* b) The address of vec is equal to the vec[0] because the pointer vec corresponds to the first position of the array. 
+	 *vec is an array of integers so the positions of the array are consecutive by 4 bytes.  */
 	
-	/*c) On different computers it would result in different addresses of the variables*/
+	/* c) On different computers it would result in different addresses of the variables */
+	
 	}
 
