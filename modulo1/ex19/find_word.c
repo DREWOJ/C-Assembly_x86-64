@@ -1,4 +1,5 @@
-#include "stddef.h"
+#include <stddef.h>
+
 int not_equal(char a, char b){
 	// checks if it is a lower case letter
 	if(a >= 97 && a <= 122) a -= 32;
@@ -12,7 +13,7 @@ char* find_word(char* word, char* initial_addr){
 	int i = 0;
 
 	while(*initial_addr != '\0' && result == NULL){ 
-		if(!not_equal(*word, *initial_addr)){
+		if(!not_equal(*word, *initial_addr)){ // checks if the first char of word and initial_addr are the same
 			result = initial_addr;
 			i = 1;
 
