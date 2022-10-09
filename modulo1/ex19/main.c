@@ -3,6 +3,6 @@
 
 int main(){
 	char s[] = "The maximum value of this CYCLE";
-	char word[] = "Maximum";
-	printf("%d", find_word(word, s));
+	char word[] = "maximum";
+	printf("%p\n", find_word(word, s));
 }

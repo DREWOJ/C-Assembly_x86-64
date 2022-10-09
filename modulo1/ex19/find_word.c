@@ -4,9 +4,10 @@
 char* find_word(char* word, char* initial_addr){
 	char *result = NULL;
 	int i = 0;
+	
+	printf("word = %s\n", word);
+	printf("string = %s\n\n", initial_addr);
 
-	upper1(word);
-	upper1(initial_addr);
 
 	while(*initial_addr != '\0' && result == NULL){ 
 		if(*word == *initial_addr){
