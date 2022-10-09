@@ -13,7 +13,7 @@ int number=0;
 
 populate(vec,num,limit);	
 
-for (int i = 0; i<num; i++) {
+for (int i = 0; i<num - 2; i++) {
 	number = check(*(vec + i),*(vec + i+1), *(vec + i+2));
 	if(number == 1) inc_nsets();
 }
