@@ -12,7 +12,7 @@ char* find_word(char* word, char* initial_addr){
 	int i = 0;
 
 	while(*initial_addr != '\0' && result == NULL){ 
-		if(*word == *initial_addr){
+		if(!not_equal(*word, *initial_addr)){
 			result = initial_addr;
 			i = 1;
 
