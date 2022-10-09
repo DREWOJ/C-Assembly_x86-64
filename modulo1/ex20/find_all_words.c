@@ -3,13 +3,14 @@
 
 void find_all_words(char* str, char* word, char** addrs){
 	int flag = 1;
+    char* addr = str;
 
     while(flag){
-        int addr = find_word(word, str);
+        addr = find_word(word, addr);
         if(addr != 0){
             *addrs = addr;
             addrs++;
-            str = str - addr; 
+            addr++;
         }else{
             flag = 0;
         }
