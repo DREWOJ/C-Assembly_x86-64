@@ -1,7 +1,7 @@
 
 INCLUDES = asm.h
-SOURCES = sum_v2.s main.c
-OBJFILES = sum_v2.o main.o
+SOURCES = sum_v3.s main.c
+OBJFILES = sum_v3.o main.o
 EXEC = main
 
 # Suffix rules
