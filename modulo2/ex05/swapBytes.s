@@ -5,14 +5,12 @@
 	.global swapBytes # short swapBytes(void)
 	
 swapBytes:
-	movw s(%rip), %dx #place s in dx
+	movw s(%rip), %dx # place s in %dx
 	
-	movb %dh, %cl
-	movb %dl, %ch
-	movb %cl, %dl
-	movb %ch, %dh
+	movb %dh, %cl # place %dh in %cl
+	movb %dl, %ch #place %dl in %ch
+		
+	addb %cl, %cl # adds %cl to %cl to obtain twice the value of the previous most significant byte
 	
-	addb %dl, %dl
-	
-	movw %dx, %ax
+	movw %cx, %ax #places %cx in %ax
 ret
