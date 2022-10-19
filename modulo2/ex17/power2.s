@@ -6,10 +6,10 @@
 	
 power2:
 
-	movl op1(%rip), %ecx
-	movl op1(%rip), %eax
+	movl op1(%rip), %ecx # place op1 into %ecx
+	movl op1(%rip), %eax # place op1 into %eax
 	
-	imul %ecx
+	imul %ecx # divides %eax with %ecx
 	
 ret
 
