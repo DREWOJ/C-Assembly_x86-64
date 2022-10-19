@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "asm.h"
 
-int num = 0;
+int num = 4;
 
 int main(void) {
 	

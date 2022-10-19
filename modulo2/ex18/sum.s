@@ -1,6 +1,6 @@
 .section .data
 	.equ A, 2
-	.equ B, 2
+	.equ B, 3
 
 	i:
 		.int 0

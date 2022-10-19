@@ -12,18 +12,18 @@
 f1_a:
 
 	movl i(%rip), %eax
-	movl j(%rip), %edx
+	movl j(%rip), %ecx
 
-	cmpl %eax, %edx
+	cmpl %eax, %ecx
 	je equal
 
-	addl %edx, %eax
+	addl %ecx, %eax
 	subl $1, %eax
 
 	jmp f1_a_end
 
 equal:
-	subl %edx, %eax
+	subl %ecx, %eax
 	addl $1, %eax
 
 f1_a_end:
@@ -35,24 +35,23 @@ f1_a_end:
 
 f2_a:
 
-	movl i(%rip), %edx
+	movl i(%rip), %ecx
 	movl j(%rip), %eax
 	cltd
 
+	cmpl %eax, %ecx
+	jg greater
 
-	cmpl %eax, %edx
-	jle lower_or_equal
-
-	incl %edx
+	incl %eax
 
 	jmp f2_a_end
 
-lower_or_equal:
-	decl %eax
+greater:
+	decl %ecx
 	cltd
 
 f2_a_end:
-	imull %edx
+	imull %ecx
 	ret
 
 
@@ -63,29 +62,29 @@ f3_a:
 
 	movl i(%rip), %eax
 	cltd
-	movl j(%rip), %edx
+	movl j(%rip), %ecx
 
 
-	cmpl %eax, %edx
-	jl lower
+	cmpl %ecx, %eax
+	jge greater_or_equal
 
-	addl %eax, %edx # h
+	addl %eax, %ecx # h
 
-	addl %edx, %eax
-	addl $i, %eax # g
+	addl %ecx, %eax
+	addl $2, %eax # g
 
 	jmp f3_a_end
 
-lower:
-	imull %edx # h
-	movl %eax, %edx # store h in edx
+greater_or_equal:
+	imull %ecx # h
+	movl %eax, %ecx # store h in ecx
 	
 	movl i(%rip), %eax
 	addl $1, %eax # g
 	cltd
 
 f3_a_end:
-	idivl %edx # result
+	idivl %ecx # result 
 	ret
 
 
@@ -99,8 +98,8 @@ f4_a:
 
 	addl j(%rip), %eax
 
-	cmpl $10, %edx
-	jle lower_or_equal_10
+	cmpl $10, %eax
+	jg greater_10
 
 	movl i(%rip), %eax
 	cltd
@@ -112,7 +111,7 @@ f4_a:
 
 	jmp f4_a_end
 
-lower_or_equal_10:
+greater_10:
 	movl j(%rip), %eax
 	cltd
 	imull %eax
@@ -122,5 +121,4 @@ lower_or_equal_10:
 	idivl %ecx	
 
 f4_a_end:
-	imull %edx
 	ret
