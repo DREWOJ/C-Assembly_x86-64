@@ -8,16 +8,16 @@
 	
 getArea:
 
-	movl length1(%rip), %ecx
-	movl length2(%rip), %edx
-	movl height(%rip), %eax
+	movl length1(%rip), %ecx # place length1 into %ecx
+	movl length2(%rip), %edx # place length2 into %edx
+	movl height(%rip), %eax #place height into %eax
 	
-	addl %edx, %ecx
+	addl %edx, %ecx # add %edx in %ecx
 	
-	mull %ecx
+	mull %ecx # multiplies %ecx with %eax
 	
-	movl $2, %ecx
+	movl $2, %ecx # place 2 into %ecx
 	
-	divl %ecx
+	divl %ecx # divides %eax with %ecx
 	
 ret
