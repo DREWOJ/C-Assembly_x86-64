@@ -16,11 +16,13 @@
 sum_v3:
 
 	movq op4(%rip), %rax # place op4 in rax
+	movslq op2(%rip), %rdx # copys op2 to rdx changin it to quad
+	movslq op1(%rip), %rsi # copys op3 to rdx changin it to quad
 	
 	addq op3(%rip), %rax # add op3 to rax
-	subq op2(%rip), %rax # sub op2 to rax
-	subq op2(%rip), %rax # sub op2 to rax
-	addq op1(%rip), %rax # add op1 to rax
-	addq op1(%rip), %rax # add op1 to rax
+	subq %rdx, %rax # sub op2 to rax
+	subq %rdx, %rax # sub op2 to rax
+	addq %rsi, %rax # add op1 to rax
+	addq %rsi, %rax # add op1 to rax
 	
 ret 
