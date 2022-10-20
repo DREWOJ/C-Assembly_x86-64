@@ -8,7 +8,7 @@
 multiplication:
 	movl op1(%rip), %ecx # place op1 into %ecx
 	movl op2(%rip), %eax # place op2 into %eax
+	cltd # extends the signal of the previous operation
 	
 	imull %ecx # multiplies %eax with %ecx
-	cltd # extends the signal of the previous operation
 ret
