@@ -5,15 +5,16 @@ char byte1 = 0;
 char byte2 = 0;
 
 int main(void) {
+	
 printf("Valor char 1:");
-scanf("%hd",byte1);
+scanf("%hhd",&byte1);
 
-printf("Valor char 1:");
-scanf("%hd",byte2);
+printf("Valor char 2:");
+scanf("%hhd",&byte2);
 
-short n = concatBytes();
+short n2 = concatBytes();
 
-printf("%hd\n", n);
+printf("concatBytes = %hd\n", n2);
 	
 return 0;	
 }
