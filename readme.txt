@@ -28,3 +28,5 @@ O nome dos restantes ficheiros nao deve conter espacos.
   
 
 Submission closed for class Modulo1
+
+Submission closed for class Modulo2
