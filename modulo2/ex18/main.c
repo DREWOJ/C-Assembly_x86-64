@@ -11,7 +11,7 @@ int main(void) {
 
 
     printf("result = %hd\n", sum());
-    int result = 0;
+    //int result = 0;
     
 /*
     for(int i = 1; i<=num; i++){

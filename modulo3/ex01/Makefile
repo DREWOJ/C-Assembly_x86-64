@@ -1,6 +1,7 @@
+
 INCLUDES = asm.h
-SOURCES = compute.s main.c
-OBJFILES = compute.o main.o
+SOURCES = seven_count.s main.c
+OBJFILES = seven_count.o main.o
 EXEC = main
 
 # Suffix rules

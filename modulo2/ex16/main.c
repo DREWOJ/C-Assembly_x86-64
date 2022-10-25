@@ -6,7 +6,7 @@ long num = 0;
 int main(void) {
 	
     printf("Enter num:");
-    scanf("%hd",&num);
+    scanf("%ld",&num);
     
 
 

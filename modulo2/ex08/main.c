@@ -8,5 +8,7 @@ int main() {
 	
 short n = crossSumBytes();
 
+printf("%hd\n", n);
+
 return 0;	
 }

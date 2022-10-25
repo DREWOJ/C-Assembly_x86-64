@@ -1,6 +1,6 @@
 INCLUDES = asm.h
-SOURCES = swapBytes.s main.c
-OBJFILES = swapBytes.o main.o
+SOURCES = concatBytes.s main.c
+OBJFILES = concatBytes.o main.o
 EXEC = main
 
 # Suffix rules

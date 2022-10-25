@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "asm.h"
 
-int op1 = 10, op2 = 3;
+int op1 = -9, op2 = -3;
 
 int main(void) {
 	
