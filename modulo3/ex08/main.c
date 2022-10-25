@@ -7,11 +7,9 @@ int num = 5;
 
 int main(void) {
 
-    vec_sum_even();
+    long sum = vec_sum_even();
 
-    for(int i = 0; i<5; i++){
-        printf("%d", vec[i]);
-    }
+    printf("%hd", sum);
         
     return 0;	
 }
