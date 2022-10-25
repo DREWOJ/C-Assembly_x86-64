@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include "asm.h"
 
-int vec[] = {1,2,3,4,5};
-int* ptrvec = vec;
-int num = 5;
+char str[] = "hello world!";
+char* ptr1 = str;
 
 int main(void) {
 
-    vec_add_two();
+    encrypt();
 
     for(int i = 0; i<5; i++){
-        printf("%d", vec[i]);
+        printf("%c", str[i]);
     }
         
     return 0;	
