@@ -1,5 +1,5 @@
 .section .data
-	.equ A, 4
+	.equ A, 6
 	.equ B, 5
 
 	i:
