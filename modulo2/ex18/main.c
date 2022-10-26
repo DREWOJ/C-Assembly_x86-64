@@ -15,7 +15,7 @@ int main(void) {
     
 /*
     for(int i = 1; i<=num; i++){
-        result +=( i*i * 4*4 / 5);
+        result +=( i*i * 6*6 / 5);
     }
     printf("actual result = %hd\n", result);
 */
