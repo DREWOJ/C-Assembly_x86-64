@@ -1,7 +1,6 @@
-
 INCLUDES = asm.h
-SOURCES = vec_sum.s  main.c
-OBJFILES = vec_sum.o main.o
+SOURCES = vec_search.s main.c
+OBJFILES = vec_search.o main.o
 EXEC = main
 
 # Suffix rules
@@ -23,4 +22,3 @@ run: ${EXEC}
 
 clean:
 	rm -f ${OBJFILES} ${EXEC}
-
