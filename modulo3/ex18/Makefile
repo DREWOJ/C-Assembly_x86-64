@@ -1,6 +1,6 @@
 INCLUDES = asm.h
-SOURCES = sort_without_reps.s main.c
-OBJFILES = sort_without_reps.o main.o
+SOURCES = array_sort.s sort_without_reps.s main.c
+OBJFILES = array_sort.o sort_without_reps.o main.o
 EXEC = main
 
 # Suffix rules
