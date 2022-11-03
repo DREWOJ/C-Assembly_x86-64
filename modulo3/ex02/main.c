@@ -11,7 +11,7 @@ int main(void) {
     str_copy_porto();
 
     for(int i = 0; i<12; i++){
-        printf("%c", *(ptr2 + i));
+        printf("%c\n", *(ptr2 + i));
     }
         
     return 0;	

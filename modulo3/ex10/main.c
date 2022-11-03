@@ -15,7 +15,7 @@ int main(void) {
     str_cat();
 
     for(int i = 0; i<16; i++){
-        printf("%c", *(ptr3 + i));
+        printf("%c\n", *(ptr3 + i));
     }
         
     return 0;	
