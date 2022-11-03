@@ -1,17 +1,21 @@
 #include <stdio.h>
 #include "asm.h"
 
-int vec[] = {1,2,3,4,5};
-int* ptrvec = vec;
-int num = 5;
+short vec[] = {1,3,5,3,4,5};
+short* ptrsrc = &vec[0];
+short vec2[5];
+short* ptrdest = &vec2[0];
+int num = 6;
 
 int main(void) {
 
-    exists();
+    int result = sort_without_reps();
 
-    for(int i = 0; i<5; i++){
-        printf("%d", vec[i]);
+    for(int i = 0; i<result; i++){
+        printf("%d", vec2[i]);
     }
+
+    printf("\n%d",result);
         
     return 0;	
 }

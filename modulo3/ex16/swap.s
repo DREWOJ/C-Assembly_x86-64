@@ -1,6 +1,6 @@
 .section .data
 	.global ptr1
-	.global pt1
+	.global ptr2
 	.global num
 
 .section .text
@@ -8,7 +8,7 @@
 
 swap:
 
-	movq num(%rip), %rcx # mov vec lenght to rcx
+	movslq num(%rip), %rcx # mov vec lenght to rcx
 	movq ptr1(%rip), %rax # move vec1 pointer to rax
 	movq ptr2(%rip), %rdx # move vec2 pointer to rdx
 

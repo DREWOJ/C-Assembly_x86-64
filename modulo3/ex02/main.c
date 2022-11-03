@@ -2,8 +2,9 @@
 #include "asm.h"
 
 char str[] = "Hello world!";
-char* ptr1 = str;
-char* ptr2;
+char str2[] = "";
+char* ptr1 = &str[0];
+char* ptr2 = &str2[0];
 
 int main(void) {
 

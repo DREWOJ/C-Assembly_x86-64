@@ -1,16 +1,26 @@
 #include <stdio.h>
 #include "asm.h"
 
-int vec[] = {1,2,3,4,5};
-int* ptrvec = vec;
+
+char str[] = "12345";
+char* ptr1 = &str[0];
+char str2[] = "54321";
+char* ptr2 = &str2[0];
 int num = 5;
+
 
 int main(void) {
 
-    exists();
+    swap();
 
-    for(int i = 0; i<5; i++){
-        printf("%d", vec[i]);
+    for(int i = 0; i<num; i++){
+        printf("%c", str[i]);
+    }
+
+    printf("\n");
+
+    for(int i = 0; i<num; i++){
+        printf("%c", str2[i]);
     }
         
     return 0;	

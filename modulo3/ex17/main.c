@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "asm.h"
 
-int vec[] = {1,2,3,4,5};
-int* ptrvec = &vec[0];
+short vec[] = {1,6,3,4,5};
+short* ptrvec = &vec[0];
 int num = 5;
 
 int main(void) {

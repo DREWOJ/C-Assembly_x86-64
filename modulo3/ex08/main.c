@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include "asm.h"
 
-int vec[] = {1,2,3,4,5};
-int* ptrvec = vec;
+long vec[] = {1,2,3,4,5};
+long* ptrvec = &vec[0];
 int num = 5;
 
 int main(void) {
 
     long sum = vec_sum_even();
 
-    printf("%hd", sum);
+    printf("%ld", sum);
         
     return 0;	
 }

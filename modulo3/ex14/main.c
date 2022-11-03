@@ -1,17 +1,16 @@
 #include <stdio.h>
 #include "asm.h"
 
-int vec[] = {1,2,3,4,5};
-int* ptrvec = vec;
+int vec[] = {1,2,3,2,5};
+int* ptrvec = &vec[0];
 int num = 5;
+int x = 0;
 
 int main(void) {
 
-    exists();
+    int result = vec_diff();
 
-    for(int i = 0; i<5; i++){
-        printf("%d", vec[i]);
-    }
+    printf("%d\n", result);
         
     return 0;	
 }
