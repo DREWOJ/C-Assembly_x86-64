@@ -3,21 +3,21 @@
 	.global num
 	
 .section .text
-	.global vec_sum # long vec_avg(void)
+	.global vec_sum # long vec_sum(void)
 	.global vec_avg # long vec_avg(void)
 
 vec_sum:
 	
-	movq ptrvec(%rip), %rdx
+	movq ptrvec(%rip), %rdx # places ptrvec into %rdx
 	movq $0, %rax
 	movw num(%rip), %si
 	
 loop:
 	
-	cmpw $0, %si
-	je end_avg
+	cmpw $0, %si # checks if the vec ended
+	je end
 	
-	addq (%rdx), %rax
+	addq (%rdx), %rax # sums all numbers inside vec
 	
 	addq $8, %rdx
 	
@@ -32,10 +32,10 @@ vec_avg:
 
 	movswq num(%rip), %rsi
 
-	cmpq $0, %rsi
-	je end_avg
+	cmpq $0, %rsi # checks if the num is 0 to avoid div for 0
+	je end
 
-	call vec_sum
+	call vec_sum # gets the sum 
 	cqto
 	
 	movw num(%rip), %si
@@ -43,7 +43,6 @@ vec_avg:
 	movswq %si, %rsi
 	idivq %rsi
 	
-	
-end_avg:
+end:
 
 ret
