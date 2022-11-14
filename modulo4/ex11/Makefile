@@ -1,7 +1,7 @@
 
 INCLUDES = asm.h
-SOURCES = proc.s call_proc.s main.c
-OBJFILES = proc.o call_proc.s main.o
+SOURCES = call_proc.s proc.s main.c
+OBJFILES = proc.o call_proc.o main.o
 EXEC = main
 
 # Suffix rules
