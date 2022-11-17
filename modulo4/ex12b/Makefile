@@ -1,6 +1,6 @@
 
-INCLUDES = count_bits_one.h
-SOURCES = count_bits_one.c main.c
+INCLUDES = asm.h
+SOURCES = count_bits_one.s main.c
 OBJFILES = count_bits_one.o main.o
 EXEC = main
 
