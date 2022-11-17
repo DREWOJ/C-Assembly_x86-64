@@ -1,7 +1,7 @@
 
-INCLUDES = count_bits_one.h
-SOURCES = count_bits_one.c main.c
-OBJFILES = count_bits_one.o main.o
+INCLUDES = asm.h
+SOURCES = count_bits_one.s vec_count_bits_one.s main.c
+OBJFILES = count_bits_one.o vec_count_bits_one.o main.o
 EXEC = main
 
 # Suffix rules
