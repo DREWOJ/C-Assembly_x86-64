@@ -16,9 +16,7 @@ reset_bit:
 	# 2^pos
 	loop:
 
-		pushq %rcx
-		imull %esi
-		popq %rcx
+		sall %eax
 
 	loop loop
 

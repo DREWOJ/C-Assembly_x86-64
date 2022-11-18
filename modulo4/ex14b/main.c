@@ -3,9 +3,9 @@
 
 int main (void) {
 
-	int x = 2;
+	int x = 2415;
 
-	printf("%d\n", count_bits_one(x));
+	printf("%d\n", count_bits_one(&x, 4));
 
 return 0;
 }
