@@ -9,7 +9,6 @@ reset_bit:
 
 	movl $1, %eax # mask
 	movq %rsi, %rcx # pos to rcx
-	movl $2, %esi
 
 	testq %rcx, %rcx
 	jle skip_mask_pow
