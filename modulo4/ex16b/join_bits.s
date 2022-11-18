@@ -16,18 +16,17 @@ join_bits:
 	# mask -> ex. 000111
 	loop:
 
-		shrl %eax
+		sall %eax
 		incl %eax
 
 	loop loop
 
 skip_mask_shift:
 
-
 	andl %eax, %edi
-	negl %eax # ~mask -> ex. 111000
+	notl %eax
 	andl %eax, %esi
-	orl %esi, %edi
-	movl %edi, %eax
+	orl %edi, %esi
+	movl %esi, %eax
 
 ret
