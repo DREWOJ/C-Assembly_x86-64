@@ -1,7 +1,7 @@
 
 INCLUDES = asm.h
-SOURCES = changes.s main.c
-OBJFILES = changes.o main.o
+SOURCES = changes.s changes_vec.s main.c
+OBJFILES = changes.o changes_vec.o main.o
 EXEC = main
 
 # Suffix rules
