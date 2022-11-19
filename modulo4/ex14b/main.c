@@ -5,7 +5,7 @@ int main (void) {
 
 	int x = 2415;
 
-	printf("%d\n", count_bits_one(&x, 4));
+	printf("%d\n", reset_bit(&x, 4));
 
 return 0;
 }

@@ -4,7 +4,7 @@
 int main (void) {
 
 	short x[] = {-1, -4, -2};
-	short* ptr = x[0];
+	short* ptr = &x[0];
 
 	printf("%d\n", vec_count_bits_one(ptr, 3));
 
