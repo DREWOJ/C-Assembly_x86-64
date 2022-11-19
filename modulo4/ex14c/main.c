@@ -3,9 +3,13 @@
 
 int main (void) {
 
-	int x = 2415;
+	int x = 0xffffffff;
+  
+  printf("%d\n",x);
 
-	printf("%d\n", reset_2bits(&x, 4));
+  reset_2bits(&x,4);
+
+  printf("%d\n", x);
 
 return 0;
 }

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "asm.h"
+#include "join_bits.h"
 
 int main (void) {
 

@@ -3,9 +3,11 @@
 
 int main (void) {
 
-	int x = 2415;
+  int a = 10;
+  int b = 5;
+  int pos = 10;
 
-	printf("%d\n", mixed_sum(&x, 4));
+	printf("%d\n", mixed_sum(a,b,pos));
 
 return 0;
 }

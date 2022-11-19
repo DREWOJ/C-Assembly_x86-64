@@ -1,7 +1,7 @@
 
 INCLUDES = asm.h
-SOURCES = reset_2bits.s main.c
-OBJFILES = reset_2bits.o main.o
+SOURCES = join_bits.s main.c
+OBJFILES = join_bits.o main.o
 EXEC = main
 
 # Suffix rules
