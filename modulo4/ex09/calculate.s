@@ -19,18 +19,19 @@ calculate:
 	movl %esi, %r9d # b
 
 	subl %esi, %edi # diff
-		
+  
+  movl %edi, diff(%rip)
+
 	movl %r8d, %eax # product
 	imull %esi
 
-	pushq %rdi # diff
+	movl %eax, product(%rip)
 		
 	movl $'*', %edi
 	movl %r8d, %esi
 	movl %r9d, %edx
 	movl %eax, %ecx
 
-	pushq %rax # product
 	pushq %rsi # a
 	pushq %rdx # b
 	
@@ -38,22 +39,15 @@ calculate:
 
 	popq %rdx # b
 	popq %rsi # a
-	popq %rax # product
-	popq %rdi # diff
 
-	movq %rdi, %rcx # diff
-	
-	movq %rdi, %r8 # diff
-
-	pushq %r8 # diff
-	pushq %rax # product
+	movq diff(%rip), %rcx # diff
 	
 	movq $'-', %rdi
 	
 	call print_result	
 
-	popq %rax # product
-	popq %r8 # diff
+  movl diff(%rip), %r8d # diff
+  movl product(%rip), %eax
 
  	subl %eax, %r8d # diff - product
 	
