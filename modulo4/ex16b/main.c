@@ -3,9 +3,11 @@
 
 int main (void) {
 
-	int x = 2415;
+  int a = 10;
+  int b = 5;
+  int pos = 20;
 
-	printf("%d\n", join_bits(&x, 4));
+	printf("%d\n", join_bits(a,b,pos));
 
 return 0;
 }

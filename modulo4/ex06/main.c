@@ -3,9 +3,10 @@
 
 int main(void) {
 	
-	int x = 3;
+	char a[3] = "aaa";
+  char b[3] = "aba";
 	
-	printf("sum of %d  = %ld\n", x,sum_smaller(x));
+	printf("strings equal  = %d\n",test_equal(a,b));
 	
 	return 0;
 }

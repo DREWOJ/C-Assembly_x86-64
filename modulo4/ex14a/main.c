@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include "asm.h"
+#include "reset_bit.h"
 
 int main (void) {
 
-	int x = 2415;
+	int pos = 5;
+  int ptr = 10;
 
-	printf("%d\n", count_bits_one(&x, 4));
+	printf("%d\n", reset_bit(&ptr, pos));
 
 return 0;
 }

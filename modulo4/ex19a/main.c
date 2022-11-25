@@ -3,7 +3,7 @@
 
 int main(void) {
 
-	int vec1[] = {3,0,0,0};
+	int vec1[] = {4,0,0,0};
   int vec2[4];
 
 	char x = 1;

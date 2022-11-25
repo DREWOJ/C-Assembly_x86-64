@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "asm.h"
+#include "count_bits_one.h"
 
 int main (void) {
 

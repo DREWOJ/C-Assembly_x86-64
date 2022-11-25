@@ -3,10 +3,15 @@
 
 int main (void) {
 
-	int x[] = {0xff00ff00fff0f0ff, 0};
-	int *ptr = x[0];
+	int x[] = {0xfff0f0ff, 0};
+	int *ptr = &x[0];
 
-	printf("%d\n", changes_vec(ptr, 2));
+  changes_vec(ptr,2);
+  
+  for (int i = 0; i < 2; ++i) {
+    
+    printf("%d\n", x[i] );
 
+  }
 return 0;
 }

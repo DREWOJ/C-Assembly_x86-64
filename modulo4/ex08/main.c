@@ -3,9 +3,11 @@
 
 int main(void) {
 	
-	int x = 3;
+	int a = 3;
+  int b = 10;
+  int c = 2;
 	
-	printf("sum of %d  = %ld\n", x,sum_smaller(x));
+	printf("cal  = %d\n", calc(a,&b,c));
 	
 	return 0;
 }
