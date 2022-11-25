@@ -3,6 +3,11 @@
 
 
 sum_n2:
+
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movq $0, %rax
 	cmpl $0, %edi
 	jle end
@@ -16,5 +21,11 @@ sum_n2:
 		loop loop
 
 	movq %rsi, %rax	
+
 end:
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
+
 	ret

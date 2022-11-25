@@ -5,6 +5,11 @@
 # %rsi n	
 	
 count_odd:
+
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movb $2, %cl
 	movl $0, %edx
 	
@@ -36,4 +41,9 @@ found:
 	
 end:
 	movl %edx, %eax
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
+
 ret

@@ -12,6 +12,14 @@
 	
 calculate:
 
+	# diff = -8(%rbp)
+	# product = -16(%rbp)
+
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+    subq $16, %rsp      # allocate 16 bytes for local variables
+
 	pushq %rbp # prologue
 	movq %rsp, %rbp
 	

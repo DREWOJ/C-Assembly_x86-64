@@ -6,6 +6,11 @@
 # smaller %rdx
 
 sum_smaller:
+
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movl %edi, %eax
 	addl %esi, %eax
 	cmpl %edi, %esi
@@ -17,4 +22,8 @@ sum_smaller:
 greater:
 	movl %edi, (%rdx)
 end:
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 	ret

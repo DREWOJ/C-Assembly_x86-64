@@ -8,6 +8,10 @@
 
 greatest:
 
+	# prologue
+	pushq %rbp             # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movq %rdi, %rax
 	
 	# checks if a > b
@@ -34,5 +38,9 @@ check_d:
 	movq %rcx, %rax
 
 
+
 end:
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 	ret
