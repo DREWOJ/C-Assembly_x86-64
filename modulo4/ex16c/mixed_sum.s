@@ -8,6 +8,11 @@
 
 mixed_sum:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
+
 	pushq %rdi
 	pushq %rsi
 	pushq %rdx
@@ -23,5 +28,9 @@ mixed_sum:
 	call join_bits
 
 	addl %r8d, %eax
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 
 ret

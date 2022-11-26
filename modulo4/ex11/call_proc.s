@@ -18,27 +18,33 @@
 
 call_proc:
 	
-	# prologue ------------
-	pushq %rbp
-	movq %rsp, %rbp
-	
-	movl %edi, x1(%rip)
-	movl %esi, x2(%rip)
-	movw %dx, x3(%rip)
-	movb %cl, x4(%rip)
+	# x1 = -8(%rbp)
+	# x2 = -16(%rbp)
+	# x3 = -24(%rbp)
+	# x4 = -32(%rbp)
 
-	leaq x1(%rip), %rsi # &x1	
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+    subq $32, %rsp      # allocate 16 bytes for local variables
 	
-	movl x2(%rip), %edx
-	leaq x2(%rip), %rcx # &x2
+	movl %edi, -8(%rbp)
+	movl %esi, -16(%rbp)
+	movw %dx, -24(%rbp)
+	movb %cl, -32(%rbp)
 
-	movw x3(%rip), %r8w
-	leaq x3(%rip), %r9 # &x3
+	leaq -8(%rbp), %rsi # &x1	
 	
-	leaq x4(%rip), %r11 # &x4
+	movl -16(%rbp), %edx
+	leaq -16(%rbp), %rcx # &x2
+
+	movw -24(%rbp), %r8w
+	leaq -24(%rbp), %r9 # &x3
+	
+	leaq -32(%rbp), %r11 # &x4
 	pushq %r11
 	
-	movb x4(%rip), %r10b #x4
+	movb -32(%rbp), %r10b #x4
 	pushq %r10
 	
 	call proc
@@ -46,12 +52,12 @@ call_proc:
 	popq %r10
 	popq %r11
 	
-	movl x1(%rip), %edx
-	addl x2(%rip), %edx
+	movl -8(%rbp), %edx
+	addl -16(%rbp), %edx
 
-	movw x3(%rip), %di
+	movw -24(%rbp), %di
 	
-	movsbw x4(%rip), %cx
+	movsbw -32(%rbp), %cx
 	sub %cx, %di
 
 	movswl %di, %edi
@@ -59,8 +65,8 @@ call_proc:
 	movl %edi, %eax
 	imull %edx
 	
-	# epilogue ------------
-	movq %rbp, %rsp
-	popq %rbp
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 	
 ret

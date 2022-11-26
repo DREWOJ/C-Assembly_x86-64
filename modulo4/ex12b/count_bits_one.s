@@ -5,6 +5,10 @@
 
 count_bits_one:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movl $0x80000000, %esi # mask
 	xor %eax, %eax
 	movq $32, %rcx
@@ -24,5 +28,9 @@ count_bits_one:
 		jump:
 
 	loop loop
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 	
 ret

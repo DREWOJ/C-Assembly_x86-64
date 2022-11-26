@@ -8,6 +8,10 @@
 
 join_bits:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movl $1, %eax # mask
 	movq %rdx, %rcx # pos to rcx
 
@@ -28,5 +32,9 @@ skip_mask_shift:
 	andl %eax, %esi
 	orl %edi, %esi
 	movl %esi, %eax
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 
 ret

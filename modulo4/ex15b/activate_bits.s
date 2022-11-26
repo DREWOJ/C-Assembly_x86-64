@@ -7,6 +7,10 @@
 
 activate_bits:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movl $0xffffffff, %r8d # mask
 	
 	cmpl $31, %esi
@@ -34,4 +38,9 @@ next:
 	
 end:
 	movl %edi, %eax # returns a
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
+
 ret

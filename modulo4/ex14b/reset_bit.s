@@ -6,6 +6,9 @@
 
 reset_bit:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
 
 	movl $1, %eax # mask
 	movq %rsi, %rcx # pos to rcx
@@ -35,6 +38,10 @@ continue:
 	notl %ecx # ~ecx
 	andl (%rdi), %ecx
 	movl %ecx, (%rdi) 
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 
 ret
 

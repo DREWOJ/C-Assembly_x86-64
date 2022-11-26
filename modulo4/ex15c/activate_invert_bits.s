@@ -6,9 +6,17 @@
 #rdx right
 
 activate_invert_bits:
+
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
 		
 	call activate_bits
 	
 	notl %eax
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 
 ret

@@ -6,6 +6,10 @@
 
 sum_multiples_x:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	xorl %r8d, %r8d # r8d = 0
 	xorl %eax, %eax # eax = 0
 	sarq $8, %rsi # sil is 2nd byte of x
@@ -34,4 +38,9 @@ sum_multiples_x:
 	movl %r8d, %eax
 
 end:
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
+
 ret

@@ -5,6 +5,11 @@
 
 changes:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
+
 	incq %rdi
 	movb (%rdi), %al # 2nd byte to al
 
@@ -19,4 +24,9 @@ changes:
 	movb %al, (%rdi)
 	
 end:
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
+
 ret

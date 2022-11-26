@@ -6,6 +6,10 @@
 
 distance:
 
+  # prologue
+	pushq %rbp          # save the original value of RBP 
+  movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
   movl $-1, %eax # default return
   movl $0, %ecx  # number of diff chars 
 
@@ -52,4 +56,9 @@ return2:
   jmp end
 
 end:
+
+  # epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
+
 ret

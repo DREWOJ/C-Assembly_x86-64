@@ -13,6 +13,10 @@
 
 greater_date:
 
+	# prologue
+	pushq %rbp          # save the original value of RBP 
+    movq %rsp ,%rbp     # copy the current stack pointer to RBP
+
 	movl %edi, %eax # default return
 
 	movl %edi, %edx # date1
@@ -57,4 +61,9 @@ date2:
 	jmp end
 
 end:
+
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
+	
 ret

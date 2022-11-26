@@ -19,21 +19,18 @@ calculate:
 	pushq %rbp          # save the original value of RBP 
     movq %rsp ,%rbp     # copy the current stack pointer to RBP
     subq $16, %rsp      # allocate 16 bytes for local variables
-
-	pushq %rbp # prologue
-	movq %rsp, %rbp
 	
 	movl %edi, %r8d # a
 	movl %esi, %r9d # b
 
 	subl %esi, %edi # diff
   
-  movl %edi, diff(%rip)
+  movl %edi, -8(%rbp)
 
 	movl %r8d, %eax # product
 	imull %esi
 
-	movl %eax, product(%rip)
+	movl %eax, -16(%rbp)
 		
 	movl $'*', %edi
 	movl %r8d, %esi
@@ -48,20 +45,21 @@ calculate:
 	popq %rdx # b
 	popq %rsi # a
 
-	movq diff(%rip), %rcx # diff
+	movq -8(%rbp), %rcx # diff
 	
 	movq $'-', %rdi
 	
 	call print_result	
 
-  movl diff(%rip), %r8d # diff
-  movl product(%rip), %eax
+  movl -8(%rbp), %r8d # diff
+  movl -16(%rbp), %eax
 
  	subl %eax, %r8d # diff - product
 	
 	movl %r8d, %eax # result
 	
-	movq %rbp, %rsp # epilogue
-	popq %rbp
+	# epilogue
+    movq %rbp , %rsp     # retrieve the original RSP value
+    popq %rbp            # restore the original RBP value
 
 ret
