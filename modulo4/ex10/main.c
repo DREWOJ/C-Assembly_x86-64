@@ -5,7 +5,7 @@ int main(void) {
 	
 	short w = 3;
 	
-	printf("%d", call_incr(w));
+	printf("%d\n", call_incr(w));
 	
 	return 0;
 }
