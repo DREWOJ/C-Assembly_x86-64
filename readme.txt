@@ -32,3 +32,5 @@ Submission closed for class Modulo1
 Submission closed for class Modulo2
 
 Submission closed for class modulo3
+
+Submission closed for class Modulo4
