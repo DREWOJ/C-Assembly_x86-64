@@ -1,6 +1,6 @@
 
 INCLUDES = function.h
-SOURCES =  fill_student.c update_address.c main.c
+SOURCES =  fill_student.c update_address.s main.c
 OBJFILES = fill_student.o update_address.o main.o
 EXEC = main
 
