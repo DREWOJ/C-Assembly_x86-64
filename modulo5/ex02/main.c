@@ -21,3 +21,10 @@ int main( void ){
     printf( "[3]=%d\n", ptr->b );
     return 0;
 }
+
+
+/* Enquanto que quando utilizadas unions os diferentes tipos 
+    de dados ficam alocados no mesmo espaco de memória, nas
+    estruturas, os diferentes tipos de dados ficam alocados
+    sequancialmente na memória, podendo ser acedidos independentemente.
+ */
