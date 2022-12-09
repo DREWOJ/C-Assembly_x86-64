@@ -2,7 +2,6 @@
 
 char *new_str(char str[80]) {
 
-
   int cont = 0;
   while(str[cont] != '\0'){
     cont++;
