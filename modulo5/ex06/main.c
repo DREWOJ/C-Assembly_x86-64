@@ -10,7 +10,7 @@ int main(void) {
   update_grades(&s,new_grades);
 
   for (int i = 0; i < 5; ++i) {
-      printf("%d\n",s.grades[i]);
+      printf("grades[%d] = %d\n",i,s.grades[i]);
   }
 
   int ptr[5];

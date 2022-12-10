@@ -7,7 +7,7 @@ int main (void) {
 
   fill_student(&s,20,100,"Pedro","Rua do Pedro");
   
-  printf("age = %d\n number= %d\n name = %s\n address = %s\n", s.age, s.number, s.name,s.address);
+  printf("age = %d\nnumber = %d\nname = %s\naddress = %s\n", s.age, s.number, s.name,s.address);
 
   update_address(&s, "Rua do oão");
   printf("new address = %s\n ", s.address);
