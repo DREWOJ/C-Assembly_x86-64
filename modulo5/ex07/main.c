@@ -11,7 +11,7 @@ int main(void) {
 
   fill_s1(&s, vi, vc, vj, vd);
 
-  printf(" c = %d\n i = %d\n d = %d\n j = %d\n", s.c, s.i, s.d, s.j);
+  printf("c = %d\ni = %d\nd = %d\nj = %d\n", s.c, s.i, s.d, s.j);
 
   return 0;   
 }
