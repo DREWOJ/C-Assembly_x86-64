@@ -10,7 +10,9 @@
 approved_semester:
 
     movw N_STUDENTS_OFFSET(%rdi), %cx
-    xor %eax, %eax
+    xorq %rax, %rax
+    xorq %rsi, %rsi
+
 
     testw %cx, %cx
     je end
