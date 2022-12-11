@@ -1,6 +1,6 @@
 INCLUDES = function.h
-SOURCES =  new_matrix.c find_matrix.c main.c
-OBJFILES = new_matrix.o find_matrix.o main.o
+SOURCES =  approved_semester.s main.c
+OBJFILES = approved_semester.o main.o
 EXEC = main
 
 # Suffix rules

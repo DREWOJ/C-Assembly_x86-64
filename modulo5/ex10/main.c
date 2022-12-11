@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include "function.h"
+#include <stdlib.h>
 
 int main(void) {
 
-  int **matrix = new_matrix(5,5);
+  char *str = new_str("Hello world!");
+  
+  printf("Address: %p\n", str);
+  // calloc() returns the pointer to the allocated memory block, or NULL in error
+  printf("Content: %s\n", str);
 
-  printf("matrix address = %p\n", matrix);
-
-
-
+  free(str);
+  
   return 0;
 }
