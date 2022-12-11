@@ -17,7 +17,7 @@ int main(void) {
 
   int n_greater_grades = locate_greater(&s, 11, ptr);
 
-  printf("Number of greater grades: %d\n",n_greater_grades);
+  printf("Number of grades greater than %d : %d\n", 11, n_greater_grades);
 
   return 0;
 }
