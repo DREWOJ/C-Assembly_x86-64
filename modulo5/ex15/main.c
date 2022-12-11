@@ -26,6 +26,7 @@ int main(void) {
   long value2 = pop(&s);
   printf("stack size after 2 pop = %d\n", s.size);
   printf("value pop = %ld\n\n", value2);
-  
+ 
+  free(s.stack);
   return 0; 
 }
