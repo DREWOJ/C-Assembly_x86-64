@@ -1,6 +1,6 @@
 INCLUDES = function.h
-SOURCES =  return_unionB_b.s new_matrix.c main.c
-OBJFILES = return_unionB_b.o new_matrix.o main.o
+SOURCES =  return_unionB_b.s main.c
+OBJFILES = return_unionB_b.o main.o
 EXEC = main
 
 # Suffix rules
