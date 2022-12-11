@@ -1,6 +1,6 @@
 INCLUDES = function.h
-SOURCES =  count_odd_matrix.s main.c
-OBJFILES = count_odd_matrix.o main.o
+SOURCES =  count_odd_matrix.s new_matrix.c main.c
+OBJFILES = count_odd_matrix.o new_matrix.o main.o
 EXEC = main
 
 # Suffix rules
