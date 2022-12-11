@@ -8,7 +8,7 @@
 # rdi g
 
 approved_semester:
-
+    xorq %rcx, %rcx
     movw N_STUDENTS_OFFSET(%rdi), %cx
     xor %rax, %rax
 
@@ -50,8 +50,6 @@ approved_semester:
         next:
 
     loop loop  
-
-   
 
 end:
     ret
