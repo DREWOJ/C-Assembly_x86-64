@@ -1,6 +1,6 @@
 .section .data
     .equ N_STUDENTS_OFFSET, 0
-    .equ GRADES_OFFSET, 2
+    .equ GRADES_OFFSET, 8
     
 .section .text
     .global approved_semester #   int approved_semester(group *g)
@@ -10,19 +10,18 @@
 approved_semester:
 
     movw N_STUDENTS_OFFSET(%rdi), %cx
-    xorq %rax, %rax
-    xorq %rsi, %rsi
-
+    xor %rax, %rax
 
     testw %cx, %cx
     je end
+
+    movq GRADES_OFFSET(%rdi), %rdi
 
     loop:
         pushq %rcx
         pushq %rax
         
-        leaq GRADES_OFFSET(%rdi, %rcx, 2), %rax
-        movw (%rax), %dx
+        movw (%rdi), %dx
 
         movw $16, %cx
         movw $1, %r8w
@@ -32,12 +31,14 @@ approved_semester:
         loop2:
 
             movw %r8w, %r9w
-            shlw %r8w
             andw %dx, %r9w
 
+            shrw %dx
             addw %r9w, %si
 
         loop loop2
+
+        addq $2, %rdi
 
         popq %rax
         popq %rcx
@@ -53,4 +54,4 @@ approved_semester:
    
 
 end:
-    ret 
+    ret
